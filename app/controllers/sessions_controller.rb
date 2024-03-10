@@ -24,11 +24,6 @@ class SessionsController < ApplicationController
         flash["notice"] = "Nope."
         redirect_to "/login"
       end
-    else
-      flash["notice"] = "Nope."
-      redirect_to "/login"
-    end
-  end
 
   def destroy
     # logout the user
@@ -36,4 +31,3 @@ class SessionsController < ApplicationController
     flash["notice"] = "Goodbye."
     redirect_to "/login"
   end
-end
