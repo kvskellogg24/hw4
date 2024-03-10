@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
         session["user_id"] = @user["id"]
 
         flash["notice"] = "Welcome."
-        redirect_to "/companies"
+        redirect_to "/places"
       else
         flash["notice"] = "Nope."
         redirect_to "/login"
