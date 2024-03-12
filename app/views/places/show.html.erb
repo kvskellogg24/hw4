@@ -19,7 +19,7 @@
 
 <div class="container">
   <% if User.find_by({"id" => session["user_id"]}) != nil %>
-    <h2>My Entries</h2>
+    <h2>New Post</h2>
     <div class="row">
       <% @entries.each do |entry| %>
         <div class="col-sm-6 col-md-3">
