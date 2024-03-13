@@ -30,6 +30,17 @@
               <h6 class="card-subtitle mb-2 text-muted"><%= entry["occurred_on"] %></h6>
               <p class="card-text"><%= entry["description"] %></p>
               <p class="card-text"><%= entry["body"] %></p>
+              <%# conditionally display attached file if entry.uploaded_image.attached? %>
+              <%# use url_for(entry.uploaded_image) as attached file's url %>
+              <%# otherwise display original image url from database column %>
+              <img src="<%= entry["image"] %>" class="img-fluid">
+              <% if entry.uploaded_image.attached? %>
+                <%# use url_for(entry.uploaded_image) as attached file's url %>
+                <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+              <% else %>
+                <%# otherwise display original image url from database column %>
+                <img src="<%= entry["image"] %>" class="img-fluid">
+              <% end %>
             </div>
           </div>
         </div>

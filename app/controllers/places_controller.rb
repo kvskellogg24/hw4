@@ -15,8 +15,6 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new
     @place["name"] = params["name"]
-    @place["image"] = params["image"]
-    @place.uploaded_image.attach(params["uploaded_image"])
     @place.save
     redirect_to "/places"
   end
